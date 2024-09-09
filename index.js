@@ -11,6 +11,11 @@ const songs = [
     { title: "Come and Get Your Love", artist: "Redbone", genre: "Rock" },
     { title: "I'm Not in Love", artist: "10cc", genre: "Pop" },
     { title: "Fooled Around and Fell in Love", artist: "Elvin Bishop", genre: "Rock" },
+    { title: "Solo", artist: "Frank Ocean", genre: "Pop"},
+    { title: "Skinny", artist:"Billie Eillish", genre:"Alternative"},
+    { title: "Self control", artist:"Frank Ocean", genre:"Pop"},
+    { title: "Add up my love", artist: "Clairo", genre: "Pop" },
+    { title: "Birds of a feather", artist: "Billie Eillish", genre: "Alternative"},
     // Feel free to add even more songs
 ];
 
