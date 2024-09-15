@@ -33,10 +33,43 @@ const guardians = {
 // Function to generate playlist based on preferred genre
 function generatePlaylist(guardians, songs) {
     // Use the map() function to create playlists for each Guardian
-    // Your code here
+   
+    const playlistDiv = document.getElementById('playlists');
+
+    for (let i = 0; i < Object.keys(guardians).length; i++){
+        const titlePlaylist = songs.filter(song => song.genre === Object.values(guardians)[i]).map(song => `${song.title}`);
+        const artistPlaylist = songs.filter(song => song.genre === Object.values(guardians)[i]).map(song => `${song.artist}`);
+        
+        const guardianDiv = document.createElement('div');
+        playlistDiv.appendChild(guardianDiv);
+        const att = document.createAttribute("class");
+        att.value = "playlist";
+        guardianDiv.setAttributeNode(att);
+        
+        const guardianTitle = document.createElement('h3');
+        guardianTitle.textContent = `${Object.keys(guardians)[i]}'s Playlist`;  
+        guardianDiv.appendChild(guardianTitle);
+
+        const guardianPlaylist = document.createElement('ul');
+        guardianDiv.appendChild(guardianPlaylist);
+        for(let j = 0; j <titlePlaylist.length; j++){
+            const songList = document.createElement('li');
+            const att = document.createAttribute("class");
+            att.value = "song";
+            songList.setAttributeNode(att);
+            guardianPlaylist.appendChild(songList);
+
+            const songTitle = document.createElement('span');
+            const attr = document.createAttribute("class");
+            attr.value = "song-title";
+            songTitle.setAttributeNode(attr);
+            songList.appendChild(songTitle);          
+            songTitle.textContent = titlePlaylist[j];
+            songList.append(` by ${artistPlaylist[j]}`);
+        };       
+    }
+    
 }
 
 // Call generatePlaylist and display the playlists for each Guardian
 generatePlaylist(guardians, songs);
-
-
